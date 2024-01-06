@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../css/main.css">
+        <style>
+            table, th, td {
+                border: 1px solid;
+            }
+            #block_container{
+                text-align:center;
+            }
+            #bloc1
+            {
+                display:inline;
+            }
+            #bloc2
+            {
+                display:inline;
+                background-color: lightgreen;
+            }
+        </style>
+        <title>
+            Analisi Matematica 3
+        </title>
+    </head>
+    <body>
+        <div id="block_container">
+            <div id="bloc1">
+                <h1>
+                    Analisi Matematica 3
+                </h1>
+            </div>
+            <div id="bloc2"><a href="../index.html">Indietro</a></div>
+        </div>
+        <table>
+            <tr>
+                <th>Tipologia</th>
+                <th>Genera</th>
+                <th><div style="float:left;">Argomento</div></th>
+            </tr>
+            <tr>
+                <td>Tipo a</td>
+                <td><button onclick=domanda_a()> Genera</button></td>
+                <td><div id="domanda_a"></div></td>
+            </tr>
+            <tr>
+                <td>Tipo b</td>
+                <td><button onclick=domanda_b()> Genera</button></td>
+                <td><div id="domanda_b"></div></td>
+            </tr>
+            <tr>
+                <td>Tipo c</td>
+                <td><button onclick=domanda_c()> Genera</button></td>
+                <td><div id="domanda_c"></div></td>
+            </tr>
+            <tr>
+                <td>Argomento 1</td>
+                <td><button onclick=domanda_1()> Genera</button></td>
+                <td><div id="domanda_1"></div></td>
+            </tr>
+            <tr>
+                <td>Argomento 2</td>
+                <td><button onclick=domanda_2()> Genera</button></td>
+                <td><div id="domanda_2"></div></td>
+            </tr>
+            <tr>
+                <td>Argomento 3</td>
+                <td><button onclick=domanda_3()> Genera</button></td>
+                <td><div id="domanda_3"></div></td>
+            </tr>
+            <tr>
+                <td>Argomento 4</td>
+                <td><button onclick=domanda_4()> Genera</button></td>
+                <td><div id="domanda_4"></div></td>
+            </tr>
+            <tr>
+                <td>Argomento 5</td>
+                <td><button onclick=domanda_5()> Genera</button></td>
+                <td><div id="domanda_5"></div></td>
+            </tr>
+        </table>
+    </body>
+    <h2>Tipologia A</h2>
+    <div id="1"></div>
+    <h2>Tipologia B</h2>
+    <div id="2"></div>
+    <h2>Tipologia C</h2>
+    <div id="3"></div>
+    
+    <script>
+            a1 = ["Teorema del Dini in due variabili", "Teorema della funzione inversa", "Curve piane regolari: tre definizioni equivalenti"]
+            a2 = ["Teorema di riduzione di Fubini (no dim)", "Teorema di integrabilità di Tonelli (no dim)", "Formula del cambio di base", "Integrazione di prodotti  a variabili separabili. integrale di Gauss", "Misura k-dimensionale di un parallelogramma generato da k vettori in R^n, matrice di Grahm, identità di Cauchy-Binet"]
+            a3 = ["Flusso di un campo vettoriale attraverso un'ipersuperficie orientata", "Teorema della divergenza", "Formula di Green", "Teorema del gradiente"]
+            a4 = ["Equazioni differenziali ordinarie in forma normale, riduzione al primo ordine di equazioni di ordine superiore", "Equivalenza tra problema differenziale di Cauchy e problema integrale di Volterra", "Teorema di Cauchy-Lipschitz di esistenza e unicità locale, osservazione sulla taglia del dominio della soluzione locale"]
+            a5 = ["Generalità sulle soluzioni di un'equazione differenziale lineare: struttura delle soluzioni dell'equazione omogenea associata, matrice risolvente e sue caratterizzazioni e proprietà, struttura delle soluzioni dell'equazione completa, metodo della variazione delle costanti arbitrarie, principio di sovrapposizione", "Equazione lineare scalare di ordine superiore: matrice wronskiana, sistema lineare del primo ordine equivalente e adattamento del risultato generale"]
+            const a = [...a1, ...a2, ...a3, ...a4, ...a5]
+            b1 = ["Varietà: tre definizioni equivalenti", "Grafici ed insiemi di livello", "Spazio tangente a una varietà differenziale in un punto: varie definizioni e loro equivalenza", "Significato geometrico del gradiente", "Lo spazio tangente affine ad un grafico coincide col grafico della funzione affine approssimante"] 
+            b2 = ["Misura di Lebesgue su R^n: proprietà ulteriori richieste (estensione della misura elementare di Peano; invarianza per isometrie), misura esterna e sue proprietà, insiemi misurabili (no dim)", "Insiemi trascurabili, proprietà (no dim)", "Significato della terminologia quasi ovunque", "Funzioni misurabili, proncipali proprietà (no dim)", "Funzioni semplici, approssimazioni di funzioni con funzioni semplici (no dim)", "Integrali e simmetrie", "Baricentro e momenti di inerzia di domini in R^3"]
+            b3 = ["Varietà differenziali con bordo", "Il bordo e l'interno di una varietà con bordo sono delle varietà senza bordo", "Orientazione di una varietà: caso di uno spazio vettoriale, diffeomorfismi che preservano o invertono l'orientazione, caso generale", "Una varietà con una sola carta globale è sempre orientabile", "Orientazione indotta sul bordo", "Formula di Kelvin-Stokes (no dim)"]
+            b4 = ["Proprietà delle equazioni differenziali con esistenza e unicità locale in ogni punto: unicità globale (sì dim), le soluzioni massimali hanno dominio aperto (sì dim), fuga dai compatti (no dim)", "Teorema di Cauchy-Lipschitz di esistenza e unicità globale, versione debole e forte", "Esistenza e unicità globale per le equazioni differenziali lineari", "Equazioni differenziali autonome: invarianza delle soluzioni per traslazioni temporali, flusso, orbite", "Curve integrali, equilibri", "Principali proprietà delle equazioni autonome date da campi localmente lipschitziani", "Integrale primo di un'equazione autonoma", "Integrale dell'energia", "Spazio delle fasi"]
+            b5 = ["Caso dei sistemi differenziali lineari a coefficienti costanti: costruzione diretta con l'operatore di Volterra della soluzione del problema di Cauchy per il problema omogeneo associato", "Matrice esponenziale e sue proprietà"]
+            const b = [...b1, ...b2, ...b3, ...b4, ...b5]
+            c1 = ["Punti stazionari di una funzione su una varietà", "Gli estremi locali di una funzione vincolati su una varietà sono punti stazionari", "Teorema dei moltiplicatori di Lagrange"]
+            c2 = ["Integrale di Lebesgue e sue principali proprietà (no dim)", "Integrale di Lebesgue e integrale di Riemann (no dim)", "Teorema di Guldino sui volumi di rotazione", "Integrale di volume su una varietà parametrica, e sua indipendenza dalla parametrizzazione e casi particolari (curve superfici e grafici cartesiani)", "Baricentro e momento di inerzia di superfici materiali in R^3", "Teorema di Guldino sulle superfici di rotazione"]
+            c3 = []
+            c4 = ["Sistemi autonomi nel piano, forma differenziale associata e integrale primo; ricerca di un fattore integrante e casi particolari", "Equazione totale e suo significato", "Nozione di equivalenza per sistemi autonomi localmente lipschitziani, sua espressione in termini dei campi (no dim)"]
+            c5 = ["Calcolo di una risolvente per il sistema omogeneo e della matrice esponenziale in vari casi: autovalori distinti, un solo autovalore, caso generale tramite decomposizione in sottospazi invarianti specialmente con l'uso degli autospazi generalizzati", "Sistemi reali e spazio delle soluzioni reali"]
+            const c = [...c1, ...c2, ...c3, ...c4, ...c5]
+            d1 = [...a1, ...b1, ...c1]
+            d2 = [...a2, ...b2, ...c2]
+            d3 = [...a3, ...b3, ...c3]
+            d4 = [...a4, ...b4, ...c4]
+            d5 = [...a5, ...b5, ...c5]
+            document.getElementById("1").innerHTML=a.toString()
+            document.getElementById("2").innerHTML=b.toString()
+            document.getElementById("3").innerHTML=c.toString()
+        function domanda_a(){
+            const d = new Date().getTime()
+            n = Math.floor(Math.random()*d) % a.length
+            console.log(n)
+            document.getElementById("domanda_a").innerHTML=a[n]
+        }
+        function domanda_b(){
+            const d = new Date().getTime()
+            n = Math.floor(Math.random()*d) % b.length
+            console.log(n)
+            document.getElementById("domanda_b").innerHTML=b[n]
+        }
+        function domanda_c(){
+            const d = new Date().getTime()
+            n = Math.floor(Math.random()*d) % c.length
+            console.log(n)
+            document.getElementById("domanda_c").innerHTML=c[n]
+        }
+        function domanda_1(){
+            const d = new Date().getTime()
+            n = Math.floor(Math.random()*d) % d1.length
+            console.log(n)
+            document.getElementById("domanda_1").innerHTML=d1[n]
+        }
+        function domanda_2(){
+            const d = new Date().getTime()
+            n = Math.floor(Math.random()*d) % d2.length
+            console.log(n)
+            document.getElementById("domanda_2").innerHTML=d2[n]
+        }
+        function domanda_3(){
+            const d = new Date().getTime()
+            n = Math.floor(Math.random()*d) % d3.length
+            console.log(n)
+            document.getElementById("domanda_3").innerHTML=d3[n]
+        }
+        function domanda_4(){
+            const d = new Date().getTime()
+            n = Math.floor(Math.random()*d) % d4.length
+            console.log(n)
+            document.getElementById("domanda_4").innerHTML=d4[n]
+        }
+        function domanda_5(){
+            const d = new Date().getTime()
+            n = Math.floor(Math.random()*d) % d5.length
+            console.log(n)
+            document.getElementById("domanda_5").innerHTML=d5[n]
+        }
+
+    </script>
+</html>

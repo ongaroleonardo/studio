@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../css/main.css">
+        <style>
+            table, th, td {
+                border: 1px solid;
+            }
+            #block_container{
+                text-align:center;
+            }
+            #bloc1
+            {
+                display:inline;
+            }
+            #bloc2
+            {
+                display:inline;
+                background-color: lightgreen;
+            }
+        </style>
+        <title>
+            Fisica Generale 2
+        </title>
+    </head>
+    <body>
+        <div id="block_container">
+            <div id="bloc1">
+                <h1>
+                    Fisica Generale 2
+                </h1>
+            </div>
+            <div id="bloc2"><a href="../index.html">Indietro</a></div>
+        </div>
+        <table>
+            <tr>
+                <th>Macroargomento</th>
+                <th>Genera</th>
+                <th><div style="float:left;">Argomento</div></th>
+            </tr>
+            <tr>
+                <td>Elettrostatica</td>
+                <td><button onclick=domanda_1()> Genera</button></td>
+                <td><div id="domanda_1"></div></td>
+            </tr>
+            <tr>
+                <td>Campi elettrici nella materia</td>
+                <td><button onclick=domanda_2()> Genera</button></td>
+                <td><div id="domanda_2"></div></td>
+            </tr>
+            <tr>
+                <td>Correnti elettriche</td>
+                <td><button onclick=domanda_3()> Genera</button></td>
+                <td><div id="domanda_3"></div></td>
+            </tr>
+            <tr>
+                <td>Magnetostatica</td>
+                <td><button onclick=domanda_4()> Genera</button></td>
+                <td><div id="domanda_4"></div></td>
+            </tr>
+            <tr>
+                <td>Induzione elettromagnetica</td>
+                <td><button onclick=domanda_5()> Genera</button></td>
+                <td><div id="domanda_5"></div></td>
+            </tr>
+            <tr>
+                <td>Magnetismo nella materia</td>
+                <td><button onclick=domanda_6()> Genera</button></td>
+                <td><div id="domanda_6"></div></td>
+            </tr>
+            <tr>
+                <td>Campo elettromagnetico</td>
+                <td><button onclick=domanda_7()> Genera</button></td>
+                <td><div id="domanda_7"></div></td>
+            </tr>
+            <tr>
+                <td>Onde</td>
+                <td><button onclick=domanda_8()> Genera</button></td>
+                <td><div id="domanda_8"></div></td>
+            </tr>
+            <tr>
+                <td>Radiazione elettromagnetica</td>
+                <td><button onclick=domanda_9()> Genera</button></td>
+                <td><div id="domanda_9"></div></td>
+            </tr>
+            <tr>
+                <td>Generica</td>
+                <td><button onclick=domanda()> Genera</button></td>
+                <td><div id="domanda"></div></td>
+            </tr>
+        </table>
+    </body>
+    <h2>Elettrostatica</h2>
+    <div id="1"></div>
+    <h2>Campi elettrici nella materia</h2>
+    <div id="2"></div>
+    <h2>Correnti elettriche</h2>
+    <div id="3"></div>
+    <h2>Magnetostatica</h2>
+    <div id="4"></div>
+    <h2>Induzione elettromagnetica</h2>
+    <div id="5"></div>
+    <h2>Magnetismo nella materia</h2>
+    <div id="6"></div>
+    <h2>Campo elettromagnetico</h2>
+    <div id="7"></div>
+    <h2>Onde</h2>
+    <div id="8"></div>
+    <h2>Radiazione elettromagnetica</h2>
+    <div id="9"></div>
+    <script>
+            d1=["Proprietà della forza elettrostatica", "Energia elettrica", "Esperimento di Rutherdford", "Campo elettrico", "Campo elettrico da distribuzioni di cariche", "Esperimento di Millikan", "Campo elettrico in una sfera cava", "Legge di Gauss", "Flusso del campo elettrico", "Divergenza del campo elettrico", "Circuitazione del campo elettrico", "Rotore del campo elettrico", "Condizioni di continuità del campo elettrico", "Potenziale elettrostatico", "Dipolo elettrico", "Sviluppo in serie di multipolo", "Densità di energia elettrostatica", "Equazioni di Poisson e Laplace", "Teorema di Earnshaw"]
+            d2=["Induzione elettrostatica", "Pressione elettrostatica", "Schermo elettrostatico", "Sistemi di conduttori", "Condensatori", "Energia elettrica di un condensatore", "Dielettrici", "Esperimenti con condensatori piani", "Azione di un campo elettrico su singoli atomi", "Polarizzazione di un dielettrico", "Lamina dielettrica in un condensatore", "Densità superficiale e voumetrica di carica di polarizzazione", "Equazioni di Gauss con dielettrici", "Campo spostamento elettrico", "Energia elettrostatica in mezzi polarizzati", "Meccanismi di polarizzazione"]
+            d3=["Proprietà della carica elettrica", "Corrente elettrica e densità di corrente elettrica", "Equazione di continuità", "Forza elettromotrice", "Generatore di Van de Graaf", "valvola termoionica", "Legge di Ohm", "Serie e parallelo di resistenze", "Effetto Joule", "Leggi di Kirchhoff", "Circuito RC"]
+            d4 = ["Forza di Lorentz", "Ciclotrone", "Selettore di velocità", "Bottiglie magnetiche", "Effetto Hall", "Seconda legge di Laplace", "Dipolo magnetico", "Precessione di Lamor", "Prima legge di Laplace", "Divergenza e flusso del campo magnetostatico", "Rotore e circuitazione del campo magnetostatico", "Continuità e discontinuità del campo magnetico", "Potenziale vettore", "Principio di equivalenza di Ampere"]
+            d5 = ["Legge di Faraday-Henry-Lenz", "Legge di Faraday-Henry-Lenz: deformazioni geometriche", "Legge di Faraday-Henry-Lenz: variazione del campo magnetico", "Betatrone", "Pulsazione di Lamor", "Disco di Barlow", "Riscaldatori elettromagnetici", "Turbina", "Legge di Felici", "Autoinduzione", "Circuito RL", "Mutua induzione", "Densità di energia magnetica", "Energia magnetica in circuiti accoppiati", "Circuiti in corrente alternata", "Circuiti RL"]
+            d6=["Vettore magnetizzazione", "Correnti di magnetizzazione", "Campo ausiliario H", "Scuscettività e permeabilità magnetica", "Energia magnetica nel mezzo magnetizzato", "rifrazione delle linee di campo magnetico", "Diamagnetismo", "Paramagnetismo", "Ferromagnetismo"]
+            d7=["Legge di Ampere-Maxwell", "Equazioni di Maxwell nel vuoto, equazione delle onde", "Relazioni tra E e B in un'onda", "Energia del campo elettromagnetico", "Quantità di moto del campo elettromagnetico", "Momento angolare del campo elettromagnetico", "Potenziali del campo elettromagnetico"]
+            d8= ["Onde stazionarie", "Propagazione delle onde", "Analisi di Fourier", "Battimenti", "Dispersione", "Onde in più dimensioni", "Ampiezza e intensità di un'onda", "Onde longitudinali e trasversali", "Polarizzazione", "Evoluzione del fronte d'onda", "Effetto Doppler", "Onde d'urto"]
+            d9=["Spettro elettromagnetico", "Raggi cosmici", "Effetto fotoelettrico", "Carica puntiforme accelerata", "Radiazione di dipolo (d'antenna)", "Radizione dagli atomi", "Emissione termica", "Bremsstrahlung", "Onde elettromagnetiche nei dielettrici", "Onde elettromagnetiche nei conduttori", "Intererazione radiazione-materia", "Legge di Snell per la riflessione e la rifrazione delle onde", "Onda evanescente", "Coefficienti di Fresnel", "Interferenza tra due fenditure sottili", "Tubo di Quincke", "Interferometria", "Interferenza per riflessione su lastra sottile", "Interferenza tra molte sorgenti coerenti", "Diffrazione", "Reticolo di diffrazione"]
+            dom = [...d1, ...d2, ...d3, ...d4, ...d5, ...d6, ...d7, ...d8, ...d9]
+            document.getElementById("1").innerHTML=d1.toString()
+            document.getElementById("2").innerHTML=d2.toString()
+            document.getElementById("3").innerHTML=d3.toString()
+            document.getElementById("4").innerHTML=d4.toString()
+            document.getElementById("5").innerHTML=d5.toString()
+            document.getElementById("6").innerHTML=d6.toString()
+            document.getElementById("7").innerHTML=d7.toString()
+            document.getElementById("8").innerHTML=d8.toString()
+            document.getElementById("9").innerHTML=d9.toString()
+
+        function domanda_1(){
+            const d = new Date().getTime()
+            n = Math.floor(Math.random()*d) % d1.length
+            console.log(n)
+            document.getElementById("domanda_1").innerHTML=d1[n]
+        }
+        function domanda_2(){
+            const d = new Date().getTime()
+            n = Math.floor(Math.random()*d) % d2.length
+            console.log(n)
+            document.getElementById("domanda_2").innerHTML=d2[n]
+        }
+        function domanda_3(){
+            const d = new Date().getTime()
+            n = Math.floor(Math.random()*d) % d3.length
+            console.log(n)
+            document.getElementById("domanda_3").innerHTML=d3[n]
+        }
+        function domanda_4(){
+            const d = new Date().getTime()
+            n = Math.floor(Math.random()*d) % d4.length
+            console.log(n)
+            document.getElementById("domanda_4").innerHTML=d4[n]
+        }
+        function domanda_5(){
+            const d = new Date().getTime()
+            n = Math.floor(Math.random()*d) % d5.length
+            console.log(n)
+            document.getElementById("domanda_5").innerHTML=d5[n]
+        }
+        function domanda_6(){
+            const d = new Date().getTime()
+            n = Math.floor(Math.random()*d) % d6.length
+            console.log(n)
+            document.getElementById("domanda_6").innerHTML=d6[n]
+        }
+        function domanda_7(){
+            const d = new Date().getTime()
+            n = Math.floor(Math.random()*d) % d7.length
+            console.log(n)
+            document.getElementById("domanda_7").innerHTML=d7[n]
+        }
+        function domanda_8(){
+            const d = new Date().getTime()
+            n = Math.floor(Math.random()*d) % d8.length
+            console.log(n)
+            document.getElementById("domanda_8").innerHTML=d8[n]
+        }
+        function domanda_9(){
+            const d = new Date().getTime()
+            n = Math.floor(Math.random()*d) % d9.length
+            console.log(n)
+            document.getElementById("domanda_9").innerHTML=d9[n]
+        }
+        function domanda(){
+            const d = new Date().getTime()
+            n = Math.floor(Math.random()*d) % dom.length
+            console.log(n)
+            document.getElementById("domanda").innerHTML=dom[n]
+        }
+    </script>
+</html>
